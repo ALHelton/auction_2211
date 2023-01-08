@@ -40,7 +40,7 @@ pry(main)> attendee.budget
 pry(main)> auction = Auction.new
 #=> #<Auction:0x00007fbda90f1cc0 @items=[]>
 
-pry(main)> auction.items
+pry(main)> auction.items ----
 #=> []
 
 pry(main)> auction.add_item(item1)

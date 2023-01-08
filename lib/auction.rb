@@ -1,6 +1,10 @@
 class Auction
-  attr_reader :item
+  attr_reader :items
   def initialize
-    @item = []
+    @items = []
+  end
+
+  def add_item(item)
+    @items << item
   end
 end

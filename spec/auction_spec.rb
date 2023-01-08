@@ -11,5 +11,14 @@ RSpec.describe Item do
     end
   end
 
+  describe '#add_item' do
+    it "add items to array" do
+      expect(auction.items).to eq([])
+
+      auction.add_item(item1)
+      auction.add_item(item2)
+      expect(auction.items).to eq([item1, item2])
+    end
+  end
 
 end

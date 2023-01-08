@@ -17,17 +17,29 @@ class Auction
   end
 
   def unpopular_items
+    nobid_items = []
     @items.each do |item|
-      nobid_items = []
-      if item.bids.nil? == true
+      if item.bids == nil
         nobid_items << item
       end
-      nobid_items
     end
+    nobid_items
+  end
+
+  def potential_revenue
+    revenue = 0
+    @items.each do |item|
+      item.bids.each do |bid|
+        if item.bids.count > 1
+          revenue += item.bids.values.max
+          # require 'pry'; binding.pry
+        else
+          require 'pry'; binding.pry
+          revenue += bid.last
+        end
+      end
+    end
+    revenue
   end
 
 end
-
-# if item.bids.nil? == true
-#   nobid_items << item
-# end

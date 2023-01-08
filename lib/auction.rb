@@ -16,4 +16,18 @@ class Auction
     names
   end
 
+  def unpopular_items
+    @items.each do |item|
+      nobid_items = []
+      if item.bids.nil? == true
+        nobid_items << item
+      end
+      nobid_items
+    end
+  end
+
 end
+
+# if item.bids.nil? == true
+#   nobid_items << item
+# end
